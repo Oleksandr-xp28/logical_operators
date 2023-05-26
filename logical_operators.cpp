@@ -2,34 +2,22 @@
 //
 
 #include <iostream>
-#include <windows.h>
-#include <string>
-#include <iomanip>
 using namespace std;
 
 int main() {
-    string fourDigit;
+    int number;
     cout << "Enter a four-digit number: ";
-    cin >> fourDigit;
+    cin >> number;
 
-    if (fourDigit.length() != 4) {
+    if (number < 1000 || number > 9999) {
         cout << "Error: You did not enter a four-digit number." << endl;
         return 0;
     }
 
-    int number;
-    try {
-        number = stoi(fourDigit);
-    }
-    catch (const exception& e) {
-        cout << "Error: Please enter a valid four-digit number." << endl;
-        return 0;
-    }
-
-    int digit1 = number / 1000;
-    int digit2 = (number / 100) % 10;
-    int digit3 = (number / 10) % 10;
-    int digit4 = number % 10;
+    int digit1 = number / 1000;  
+    int digit2 = (number / 100) % 10;  
+    int digit3 = (number / 10) % 10;  
+    int digit4 = number % 10;  
 
     int newNumber = digit3 * 1000 + digit4 * 100 + digit1 * 10 + digit2;
 
