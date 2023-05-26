@@ -2,53 +2,23 @@
 //
 
 #include <iostream>
-#include <string>
-#include <stdexcept>
 #include <windows.h>
-#include "logical_operators.h"
 using namespace std;
 
-
-bool isHappy(int number) {
-    int sum1 = 0;
-    int sum2 = 0;
-
-    int digit;
-    for (int i = 0; i < 3; i++) {
-        digit = number % 10;
-        sum1 += digit;
-        number /= 10;
-    }
-
-    for (int i = 0; i < 3; i++) {
-        digit = number % 10;
-        sum2 += digit;
-        number /= 10;
-    }
-
-    return (sum1 == sum2);
-}
-
 int main() {
-    string sixDigit;
-    cout << "Enter a six-digit number: ";
-    cin >> sixDigit;
-
-    if (sixDigit.length() != 6) {
-        cout << "Error" << endl;
-        return 0;
-    }
-
     int number;
-    try {
-        number = stoi(sixDigit);
-    }
-    catch (const exception& e) {
-        cout << "Error: Invalid input." << endl;
+    cout << "Enter a six-digit number: ";
+    cin >> number;
+
+    if (number < 100000 || number > 999999) {
+        cout << "Error: You did not enter a six-digit number." << endl;
         return 0;
     }
 
-    if (isHappy(number)) {
+    int firstSum = (number / 100000) + ((number / 10000) % 10) + ((number / 1000) % 10);
+    int secondSum = ((number / 100) % 10) + ((number / 10) % 10) + (number % 10);
+
+    if (firstSum == secondSum) {
         cout << "Congratulations! You entered a lucky number." << endl;
     }
     else {
@@ -57,7 +27,6 @@ int main() {
 
     return 0;
 }
-
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
