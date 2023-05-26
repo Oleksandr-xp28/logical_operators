@@ -7,8 +7,6 @@
 #include <iomanip>
 using namespace std;
 
-#include <iostream>
-
 int main() {
     double sales1, sales2, sales3;
     double salary1, salary2, salary3;
@@ -64,9 +62,9 @@ int main() {
         salary3 += 200;
     }
 
-    cout << "Salary for manager 1: $" << salary1 << std::endl;
-    cout << "Salary for manager 2: $" << salary2 << std::endl;
-    cout << "Salary for manager 3: $" << salary3 << std::endl;
+    cout << "Salary for manager 1: $" << salary1 << endl;
+    cout << "Salary for manager 2: $" << salary2 << endl;
+    cout << "Salary for manager 3: $" << salary3 << endl;
 
     return 0;
 }
