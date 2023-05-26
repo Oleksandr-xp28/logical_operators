@@ -9,23 +9,23 @@ using namespace std;
 
 int main() {
     double cargoWeight;
-    std::cout << "Enter the weight of the cargo in kg: ";
-    std::cin >> cargoWeight;
+    cout << "Enter the weight in kg: ";
+    cin >> cargoWeight;
 
     double fuelConsumption;
 
     if (cargoWeight <= 500) {
-        fuelConsumption = cargoWeight * 1; // 1 liter/km
+        fuelConsumption = cargoWeight * 1; 
     }
     else if (cargoWeight <= 1000) {
-        fuelConsumption = cargoWeight * 4; // 4 liters/km
+        fuelConsumption = cargoWeight * 4;
     }
     else {
-        std::cout << "Cargo weight exceeds the maximum capacity." << std::endl;
+        std::cout << "Cargo weight maximum ." << endl;
         return 0;
     }
 
-    std::cout << "The fuel consumption for the given cargo weight is: " << fuelConsumption << " liters/km" << std::endl;
+    cout << "The fuel: cargo weight is: " << fuelConsumption << " liters/km" << endl;
 
     return 0;
 }
