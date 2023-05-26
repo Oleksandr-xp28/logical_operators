@@ -129,6 +129,9 @@
   <ItemGroup>
     <ClCompile Include="logical_operators.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="logical_operators.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
